@@ -1,0 +1,261 @@
+@use "variaveis" as v;
+@use "mixins" as mx;
+@use "extends";
+
+.header {
+  @include mx.container-fluid;
+  background-color: v.$corFundo;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../../images/hero-hotel.jpg);
+  height: 100vh;
+}
+
+.nav {
+  width: 80%;
+  @include mx.row-flex;
+  margin: 0 auto;
+  padding: v.$p-y;
+  align-items: center;
+
+  &__logo {
+    width: 200px;
+    padding: v.$p-x;
+  }
+
+  &__item {
+    display: inline-block;
+    font-size: v.$tamanhoFonteLink;
+  }
+
+  &__link {
+    color: #fff;
+    font-weight: 900;
+    padding: v.$p-y;
+    @extend %decoration-none;
+  }
+
+  &__link:hover {
+    background-color: rgba(255, 255, 255, 0.342);
+    border-radius: 5px;
+  }
+}
+
+.slogan {
+  color: v.$corSlogan;
+  text-shadow: 2px 2px 1px rgba(1, 1, 8, 0.6);
+  font-size: 4rem;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.contato {
+  @include mx.container-fluid;
+  background-color: v.$corFundocont;
+  flex-direction: column;
+  height: 100vh;
+  display: flex;
+}
+.title {
+  text-align: left;
+  padding: 2rem 0 0 5rem;
+  font-size: 2.5rem;
+  color: v.$corSlogan;
+}
+.geral {
+  display: flex;
+  margin: 0 auto;
+  padding: 12% 0 10% 0;
+  color: #eee;
+}
+.div01 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  min-width: 350px;
+  margin-right: 85px;
+}
+
+.fone {
+  width: 5%;
+  display: flex;
+  margin: 1rem 0 1rem 0;
+}
+.nub {
+  font-size: 25px;
+  text-align: right;
+  margin: 50% 0 0 4rem;
+}
+
+i {
+  padding-right: 30px;
+  position: absolute;
+}
+.cont {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15% auto;
+  border: 1px solid red;
+}
+.cont li {
+  @extend %list-none;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.contato-endereco {
+  width: 50%;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contato-social {
+  width: 50%;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Início seção benefícios */
+.beneficios {
+  @include mx.container-fluid;
+  height: 100vh;
+  background-color: v.$corFundocont;
+  color: #fff;
+
+  &__title {
+    font-size: 2.5rem;
+    padding: 2rem 0 0 5rem;
+  }
+
+  &__tipo {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item {
+    width: 33%;
+    padding: 1rem .5rem;
+  }
+
+  &__item:nth-child(1) {
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    padding: v.$p-y;
+  }
+
+  &__itemTitle {
+    padding: 1rem 0 .5rem 0;
+  }
+}
+
+.beneficios__tipo img {
+  border-radius: 10px;
+  @include mx.shadow;
+  width: 100%;
+  height: 250px;
+}
+/* Término seção benefícios */
+
+//Rodape//
+
+.footer {
+    background-color: v.$corFundocont;
+
+    li {
+        list-style: none;
+    }
+    fieldset {
+        border-style: none;
+    }
+}
+
+.form {
+    display: flex;
+}
+
+.formulario {
+    width: 50%;
+    margin: 3rem 0 0 5rem;
+}
+
+.cont-text {
+    margin-bottom: 25px;
+
+    & input {
+        border-radius: 5px;
+        width: 60%;
+        height: 40px;
+    }
+}
+
+.formulario .button {
+    width: 8rem;
+    height: 40px;
+    margin: 10px 0 40px 0;
+    border-radius: 4px;
+}
+
+.links {
+    width: 50%;
+    margin: 6.5rem 0 0 5rem;
+
+    & a {
+        text-decoration: none;
+        font-size: 1.1rem;
+        color: v.$corTitulo;
+        font-weight: 900;
+        padding: 0 1rem 0 1rem;
+        border: 2px v.$corLink solid;
+        border-radius: 10px;
+        background-color: v.$corSlogan;
+    }
+}
+
+//secao oferta
+
+.destaque{
+  background-color: v.$corFundocont;
+  height: 100vh;
+
+  & h2 {
+    font-size: 2.5rem;
+  }
+
+  & iframe{
+    display: block;
+    width:60%;
+    height:60%;
+    margin: 5% auto;
+  }
+}
+
+// RESPONSIVIDADE
+
+@import 'mobile';
+// Smartphones - Retrato
+// @media (max-width: 415px) and (orientation: portrait) {
+//
+//  }
+//
+// Smartphones - Paisagem
+// @media (max-width: 915px) and (orientation: landscape) {
+//
+// }
+//
+// Trablets - Retrato
+// @media (max-width: 1025px) and (min-height: 1023px) and (orientation: portrait) {
+//
+//  }
+//
+// Tablets - Paisagem
+// @media (max-width: 1195px) and (orientation: landscape),
+// (max-width: 1367px) and (min-height: 1023px) and (orientation: landscape) {
+//
+// }

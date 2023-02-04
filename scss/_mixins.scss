@@ -1,0 +1,53 @@
+@import 'function';
+
+@mixin display_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin display_footer {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin login-container-fluid {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin acomodacoes-container-fluid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$imgs: ("Que vista": "pexels-asman-chema-594077.jpg",
+        "Imenso Salão": "pexels-naim-benjelloun-2290753.jpg",
+        "Escadaria Colonial": "pexels-pixabay-161758.jpg",
+        "Cozinha Contemporânea": "pexels-pixabay-262047.jpg",
+        "Borda Infinita": "swimming-pool.jpg",
+        "Dia de sol": "sun-loungers-near-palms-and-swimming-pool-in-sunny-day.jpg")
+;
+
+
+$n: 0;       
+@each $titulo, $url in $imgs{
+  $n: $n + 1;
+  #card#{$n} {
+    background-image: url(/images/#{$url});
+    background-size: cover;
+
+    & h2::before {
+      content: '#{$titulo}';
+      display: block;
+      background-color: rgba(0,0,0,.4);
+      color: #fff;
+      padding: 1rem .5rem;
+    }
+  }
+}

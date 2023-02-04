@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../javascripts/validationLogin.js" async></script>
+    <title>T.EXperience Hotel | Login</title>
+  </head>
+  <body>
+    <section class="section">
+      <div class="section__card">
+        <h2 class="section__cardTitle">T.EXperience Hotel</h2>
+        <div class="section__cardBody">
+          <form>
+            <div class="bodyItems">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Digite seu e-mail"/>
+            </div>
+            <div class="bodyItems">
+              <label for="password">Senha</label>
+              <input type="password" id="senha" placeholder="Digite sua senha"/>
+            </div>
+            <div class="bodyItem">
+              <button type="button" onclick="valida_form()">Entrar
+              </button>
+            </div>
+          </div>
+          <div class="cardFooter">
+            <button type="button" class="voltarBtn">Voltar</button>
+            <span class="psw">Esqueceu a <a href="#">senha?</a></span>
+          </div>
+          </form>
+      </div>
+    </section>
+  </body>
+</html>
